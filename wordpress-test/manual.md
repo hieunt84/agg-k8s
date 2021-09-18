@@ -1,6 +1,9 @@
 ### Manual deployment
 1. Step 01: config in values.yaml
 ```
+wordpressSkipInstall: false for init
+wordpressSkipInstall: true for update
+
 ingress:
   enable: true
   ingressClassName: "nginx"
