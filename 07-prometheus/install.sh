@@ -8,6 +8,6 @@ helm repo update
 kubectl create ns prometheus
 helm install prometheus prometheus-community/kube-prometheus-stack \
 -n prometheus \
--f ./values.yaml
+-f ./values.yaml \
 --version "18.0.10"
 
