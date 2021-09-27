@@ -6,4 +6,5 @@ helm repo update
 
 # install
 kubectl create ns wordpress-test
-helm install wp-test bitnami/wordpress -n wordpress-test -f values.yaml
+kubectl config set-context --current --namespace wordpress-test
+helm install wp-test bitnami/wordpress -n wordpress-test -f ./values.yaml

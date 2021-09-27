@@ -712,7 +712,7 @@ autoscaling:
 metrics:
   ## @param metrics.enabled Start a sidecar prometheus exporter to expose metrics
   ##
-  enabled: false
+  enabled: true
   ## Bitnami Apache Exporter image
   ## ref: https://hub.docker.com/r/bitnami/apache-exporter/tags/
   ## @param metrics.image.registry Apache Exporter image registry
@@ -760,10 +760,10 @@ metrics:
   serviceMonitor:
     ## @param metrics.serviceMonitor.enabled Create ServiceMonitor Resource for scraping metrics using PrometheusOperator
     ##
-    enabled: false
+    enabled: true
     ## @param metrics.serviceMonitor.namespace The namespace in which the ServiceMonitor will be created
     ##
-    namespace: ""
+    namespace: prometheus
     ## @param metrics.serviceMonitor.interval The interval at which metrics should be scraped
     ##
     interval: 30s
@@ -778,7 +778,8 @@ metrics:
     honorLabels: false
     ## @param metrics.serviceMonitor.additionalLabels Additional custom labels for the ServiceMonitor
     ##
-    additionalLabels: {}
+    additionalLabels:
+      release: prometheus
 
 ## @section Database Parameters
 
